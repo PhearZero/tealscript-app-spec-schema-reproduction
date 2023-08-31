@@ -1,0 +1,21 @@
+{
+  "name": "tealscript-app-spec-schema-reproduction",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:cjs": "tsc -p tsconfig.cjs.json && cp ./lib/cjs/index.js ./lib/index.cjs && rm -rf ./lib/cjs",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "gen": "mkdirp lib && tealscript src/AppSpec.algo.ts ./lib",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@algorandfoundation/tealscript": "^0.38.0",
+    "@swc/core": "^1.3.81",
+    "concurrently": "^8.2.1",
+    "mkdirp": "^3.0.1",
+    "typescript": "^5.2.2"
+  }
+}

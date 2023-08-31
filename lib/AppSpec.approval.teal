@@ -1,0 +1,118 @@
+#pragma version 9
+
+txn ApplicationID
+int 0
+>
+int 6
+*
+txn OnCompletion
++
+switch create_NoOp NOT_IMPLEMENTED NOT_IMPLEMENTED NOT_IMPLEMENTED NOT_IMPLEMENTED create_DeleteApplication call_NoOp NOT_IMPLEMENTED NOT_IMPLEMENTED NOT_IMPLEMENTED call_UpdateApplication call_DeleteApplication
+
+NOT_IMPLEMENTED:
+	err
+
+abi_route_createApplication:
+	// no dupn needed
+	callsub createApplication
+	int 1
+	return
+
+createApplication:
+	proto 0 0
+
+	// src/AppSpec.algo.ts:8
+	// assert(this.txn.sender === globals.creatorAddress)
+	txn Sender
+	global CreatorAddress
+	==
+	assert
+
+	// src/AppSpec.algo.ts:9
+	// this.metadata.set("name", "AppSpec")
+	byte "name"
+	byte "AppSpec"
+	app_global_put
+
+	// src/AppSpec.algo.ts:10
+	// this.metadata.set("description", "Testing app spec output")
+	byte "description"
+	byte "Testing app spec output"
+	app_global_put
+
+	// src/AppSpec.algo.ts:11
+	// this.metadata.set("author", "Michael J Feher")
+	byte "author"
+	byte "Michael J Feher"
+	app_global_put
+
+	// src/AppSpec.algo.ts:12
+	// this.metadata.set("version", "v1.0.0")
+	byte "version"
+	byte "v1.0.0"
+	app_global_put
+
+	// src/AppSpec.algo.ts:13
+	// this.workingKey.set("Works")
+	byte "workingKey"
+	byte "Works"
+	app_global_put
+	retsub
+
+abi_route_updateApplication:
+	// no dupn needed
+	callsub updateApplication
+	int 1
+	return
+
+updateApplication:
+	proto 0 0
+
+	// src/AppSpec.algo.ts:16
+	// assert(this.txn.sender === globals.creatorAddress)
+	txn Sender
+	global CreatorAddress
+	==
+	assert
+	retsub
+
+abi_route_deleteApplication:
+	// no dupn needed
+	callsub deleteApplication
+	int 1
+	return
+
+deleteApplication:
+	proto 0 0
+
+	// src/AppSpec.algo.ts:19
+	// assert(this.txn.sender === globals.creatorAddress)
+	txn Sender
+	global CreatorAddress
+	==
+	assert
+	retsub
+
+create_NoOp:
+	txn NumAppArgs
+	bz abi_route_createApplication
+	err
+
+call_NoOp:
+	err
+
+create_UpdateApplication:
+	err
+
+call_UpdateApplication:
+	txn NumAppArgs
+	bz abi_route_updateApplication
+	err
+
+create_DeleteApplication:
+	err
+
+call_DeleteApplication:
+	txn NumAppArgs
+	bz abi_route_deleteApplication
+	err

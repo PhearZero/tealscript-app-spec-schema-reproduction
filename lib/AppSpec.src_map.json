@@ -1,0 +1,22 @@
+{
+  "pc": {
+    "version": 3,
+    "sources": [
+      "AppSpec.algo.ts"
+    ],
+    "names": [],
+    "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAKE;AAAA;;;AACkB;;AAChB;;AAFF;AAEoB;AAAQ;;;;;;;;;;;;;;;AACO;AAAjC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AACA;AAJF;;;;;;;;;;;;;;;;;;;;;;;;;AAIoB;AAAU;;;;;;;;;;;;;;;;;AAI9B;AAH+B;;;;;;;;;;;;;;;;;;;AAG/B;AAFsB;AAApB;;;;AAEF;AAGA;;;AAAA;;AACE;;AAZF;AAYkB;AAAW;AAAJ;;;;AADzB;AAAA;;;AAAA;;;;AAAA;AAAA;AAAA;AAAA;;AAAA;;;AAAA;AAAA;AARoB;AAQpB;;AAAA;;;AAAA;AAAA;AANoB;;AAAlB;;;AAMF;AAAA",
+    "file": "AppSpec.approval.teal",
+    "sourceRoot": ""
+  },
+  "teal": {
+    "version": 3,
+    "sources": [
+      "AppSpec.algo.ts"
+    ],
+    "names": [],
+    "mappings": ";;;;;;;;;;;;;;;;AAKE;AAAA;;;AACkB;;;;AAChB;AAFF;AAEoB;AAAQ;;;;;AACO;AAAjC;;;;;AACA;AAJF;;;;;AAIoB;AAAU;;;;;AAI9B;AAH+B;;;;;AAG/B;AAFsB;AAApB;;;;;AAEF;AAGA;;;AAAA;;;;AACE;AAZF;AAYkB;AAAW;AAAJ;;;;;AADzB;AAAA;;;AAAA;;;;;AAAA;AAAA;AAAA;AAAA;;;AAAA;AAAA;AAAA;;;AARoB;;;AAQpB;;;AAAA;AAAA;AAAA;;;AANoB;;;AAAlB;AAMF;AAAA",
+    "file": "AppSpec.approval.teal",
+    "sourceRoot": ""
+  }
+}
